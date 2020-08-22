@@ -1,6 +1,213 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800;900&display=swap');
 @import "./normalize";
 
 body {
   font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  min-height: 100vh;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* HEADER SECTION */
+
+header {
+  .nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 10%;
+    box-sizing: border-box;
+    height: 50px;
+    background: #cecdcd;
+    color: #737373;
+    border-bottom: 2px solid #cecdcd;
+
+    .nav__container {
+      background: #ebebeb;
+      width: 1118px;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+
+        li {
+          display: flex;
+          align-items: center;
+          padding: 0 24px;
+          height: 100%;
+        }
+      }
+    }
+
+    &__register {
+      background: #9e9d9d;
+      color: #212121;
+    }
+
+    &__login {
+      background: #5e5e5e;
+      color: #ffffff;
+    }
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 140px;
+    height: 28px;
+    background: #f4f4f4;
+
+    .breadcrumbs__container {
+      width: 1180px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__item {
+      padding: 5px;
+
+      &::after {
+        margin-left: 10px;
+        content: "/"
+      }
+
+      &:nth-last-of-type(1) {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+/* LOGIN SECTION */
+
+.login__container {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+
+  .login {
+    width: 1180px;
+
+    &__form-container {
+      display: flex;
+      flex-direction: row;
+      border-radius: 5px;
+      background: #fafafa;
+      border: 1px solid #eaeaea;
+      padding: 20px 15px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    &__heading {
+      margin: 0 0 40px 15px;
+
+      .login__title, .login__subtitle {
+        font-weight: 900;
+        margin: 5px 0;
+        position: relative;
+      }
+
+      .login__title::after {
+        content: '';
+        position: absolute;
+        width: 75px;
+        height: 5px;
+        bottom: -2px;
+        left: -5px;
+        background: #046db2;
+        z-index: -1;
+      }
+    }
+
+    &__form {
+      border-radius: 5px;
+      width: 770px;
+      box-sizing: border-box;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      background: #f0f0f0;
+
+      &__input {
+        margin: 20px 0;
+        background: #fff;
+        border-radius: 5px;
+        border: none;
+        padding: 12px;
+        box-shadow: inset 1px 1px 2px 1px rgba(215, 215, 215, 1);
+      }
+
+      &__controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &__reset-password {
+        text-decoration: none;
+        color: #5e5e5e;
+      }
+
+      &__submit {
+        border-radius: 5px;
+        background: #5e5e5e;
+        color: #fff;
+        border: none;
+        padding: 20px 180px;
+      }
+    }
+
+    .not-member {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 400px;
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 300px;
+        height: 134%;
+        background: #046db2;
+        position: absolute;
+        z-index: -1;
+        transform: skewY(-8deg);
+      }
+
+      &__register {
+        border-radius: 5px;
+        background: #5e5e5e;
+        color: #fff;
+        border: none;
+        padding: 20px 50px;
+      }
+    }
+  }
+}
+
+/* FOOTER SECTION */
+
+footer {
+  background: #5e5e5e;
+  height: 80px;
 }

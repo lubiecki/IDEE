@@ -10,6 +10,57 @@
 </head>
 <body>
 
+<header>
+  <nav class="nav">
+    <div class="nav__container">
+      <ul class="nav__menu">
+        <li class="nav__item">Buy</li>
+        <li class="nav__item">Sell</li>
+        <li class="nav__item">About</li>
+      </ul>
+      <ul class="nav__register-login">
+        <li class="nav__register">Register</li>
+        <li class="nav__login">Login</li>
+      </ul>
+    </div>
+  </nav>
+  <div class="breadcrumbs">
+    <ul class="breadcrumbs__container">
+      <li class="breadcrumbs__item"><a href="#Home">Home</a></li>
+      <li class="breadcrumbs__item">Login</li>
+    </ul>
+  </div>
+</header>
+
+<article class="login__container">
+  <section class="login">
+    <div class="login__heading">
+      <h1 class="login__title">Login</h1>
+      <h4 class="login__subtitle">To access your account</h4>
+    </div>
+    <div class="login__form-container">
+      <form action="" class="login__form" method="post">
+        <label for="username">Username</label>
+        <input class="login__form__input" id="username" name="username" required type="text">
+        <label for="email">Email Address</label>
+        <input class="login__form__input" id="email" name="email" required type="email">
+        <label for="password">Password</label>
+        <input class="login__form__input" id="password" name="password" required type="password">
+        <div class="login__form__controls">
+          <a class="login__form__reset-password" href="#Reset_Password">Forgot password?</a>
+          <input class="login__form__submit" type="submit" value="Login">
+        </div>
+      </form>
+      <div class="not-member">
+        <h4 class="not-member__title">Not a member?</h4>
+        <button class="not-member__register">Register Today</button>
+      </div>
+    </div>
+  </section>
+</article>
+
+<footer></footer>
+
 <script src="scripts/main.js"></script>
 </body>
 </html>
