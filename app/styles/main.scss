@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800;900&display=swap');
 @import "./normalize";
+@import "./variables";
+
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -9,25 +11,29 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  color: $text;
 }
 
 /* HEADER SECTION */
 
 header {
+  width: 100%;
+
   .nav {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 0 10%;
     box-sizing: border-box;
     height: 50px;
-    background: #cecdcd;
-    color: #737373;
-    border-bottom: 2px solid #cecdcd;
+    background: $gray;
+    border-bottom: 2px solid $gray;
 
-    .nav__container {
-      background: #ebebeb;
-      width: 1118px;
+    &__container {
+      background: $light-gray;
+      max-width: 1118px;
+      width: 100%;
       height: 100%;
       display: flex;
       justify-content: space-between;
@@ -39,7 +45,6 @@ header {
         margin: 0;
         padding: 0;
         height: 100%;
-
         li {
           display: flex;
           align-items: center;
@@ -50,12 +55,10 @@ header {
     }
 
     &__register {
-      background: #9e9d9d;
-      color: #212121;
+      background: $dark-gray;
     }
-
     &__login {
-      background: #5e5e5e;
+      background: $dark-gray;
       color: #ffffff;
     }
   }
@@ -66,7 +69,7 @@ header {
     justify-content: center;
     padding: 0 140px;
     height: 28px;
-    background: #f4f4f4;
+    background: $light-gray;
 
     .breadcrumbs__container {
       width: 1180px;
@@ -94,6 +97,27 @@ header {
   }
 }
 
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+  header
+  .breadcrumbs {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  header {
+    .nav {
+      &__container {
+        justify-content: center;
+
+        ul.nav__register-login {
+          display: none;
+        }
+      }
+    }
+  }
+}
 
 /* LOGIN SECTION */
 
@@ -102,30 +126,29 @@ header {
   display: flex;
   justify-content: center;
   align-self: center;
+  box-sizing: border-box;
 
   .login {
-    width: 1180px;
+    position: relative;
+    width: 100%;
 
     &__form-container {
       display: flex;
       flex-direction: row;
       border-radius: 5px;
       background: #fafafa;
-      border: 1px solid #eaeaea;
-      padding: 20px 15px;
+      border: 1px solid $gray;
+      padding: $padding;
       width: 100%;
       box-sizing: border-box;
     }
-
     &__heading {
       margin: 0 0 40px 15px;
-
       .login__title, .login__subtitle {
         font-weight: 900;
         margin: 5px 0;
         position: relative;
       }
-
       .login__title::after {
         content: '';
         position: absolute;
@@ -133,16 +156,16 @@ header {
         height: 5px;
         bottom: -2px;
         left: -5px;
-        background: #046db2;
+        background: $blue;
         z-index: -1;
       }
     }
-
     &__form {
       border-radius: 5px;
-      width: 770px;
+      max-width: 770px;
+      width: 100%;
       box-sizing: border-box;
-      padding: 20px;
+      padding: $padding;
       display: flex;
       flex-direction: column;
       background: #f0f0f0;
@@ -153,29 +176,25 @@ header {
         border-radius: 5px;
         border: none;
         padding: 12px;
-        box-shadow: inset 1px 1px 2px 1px rgba(215, 215, 215, 1);
+        box-shadow: inset 1px 1px 2px 1px $gray;
       }
-
       &__controls {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-
       &__reset-password {
         text-decoration: none;
-        color: #5e5e5e;
+        color: $dark-gray;
       }
-
       &__submit {
         border-radius: 5px;
-        background: #5e5e5e;
+        background: $dark-gray;
         color: #fff;
         border: none;
-        padding: 20px 180px;
+        padding: $padding 180px;
       }
     }
-
     .not-member {
       display: flex;
       align-items: center;
@@ -183,12 +202,13 @@ header {
       flex-direction: column;
       width: 400px;
       position: relative;
+      box-sizing: border-box;
 
       &::after {
         content: '';
         width: 300px;
         height: 134%;
-        background: #046db2;
+        background: $blue;
         position: absolute;
         z-index: -1;
         transform: skewY(-8deg);
@@ -196,18 +216,65 @@ header {
 
       &__register {
         border-radius: 5px;
-        background: #5e5e5e;
+        background: $dark-gray;
         color: #fff;
         border: none;
-        padding: 20px 50px;
+        padding: $padding 50px;
       }
     }
   }
 }
 
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+  .login__container {
+    margin: 20px 0;
+    min-width: 700px;
+
+    .login {
+      &__form-container {
+        flex-direction: column;
+
+        .login__form {
+          margin-bottom: 20px;
+          max-width: 100%;
+
+          &__submit {
+            padding: $padding 40px;
+          }
+        }
+
+        .not-member {
+          width: 100%;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: $padding;
+
+          &::after {
+            display: none;
+          }
+
+          &__register {
+            padding: $padding;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992.98px) {
+  .login__container {
+    min-width: 100%;
+  }
+}
+
+
 /* FOOTER SECTION */
 
 footer {
-  background: #5e5e5e;
+  background: $dark-gray;
   height: 80px;
+  width: 100%;
 }
