@@ -16,6 +16,11 @@ body {
   color: $text;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* HEADER SECTION */
 
 header {
@@ -55,7 +60,7 @@ header {
     }
 
     &__register {
-      background: $dark-gray;
+      background: $gray;
     }
     &__login {
       background: $dark-gray;
@@ -205,10 +210,11 @@ header {
 
       &::after {
         content: '';
-        width: 300px;
-        height: 134%;
+        height: 130%;
         background: $blue;
         position: absolute;
+        left: $padding;
+        right: $padding;
         z-index: -1;
         transform: skewY(-8deg);
       }
