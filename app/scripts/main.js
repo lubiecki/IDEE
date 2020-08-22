@@ -11,9 +11,11 @@ if (loginForm) {
         if (event.target.username.value.length > 100) {
             loginError.innerHTML = errorUsername;
             loginError.className = 'visible';
+            loginError.setAttribute('aria-hidden','false')
         } else if (event.target.password.value.length < 7 || event.target.password.value.length > 25) {
             loginError.innerHTML = errorPassword;
             loginError.className = 'visible';
+            loginError.setAttribute('aria-hidden','false')
         } else {
             loginForm.submit();
         }
