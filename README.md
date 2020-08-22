@@ -1,3 +1,3 @@
 # IDEE
 
-Demo: https://lubiecki.pl/IDEE/
+Demo: http://lubiecki.ayz.pl/
