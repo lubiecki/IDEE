@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8">
-  <meta content="" name="description">
+  <meta content="IDEE - Zadanie rekrutacyjne" name="description">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <title>IDEE - Zadanie rekrutacyjne</title>
   <link href="apple-touch-icon.png" rel="apple-touch-icon">
@@ -16,13 +16,13 @@
   <nav class="nav">
     <div class="nav__container">
       <ul class="nav__menu">
-        <li class="nav__item"><a href="/buy">Buy</a></li>
-        <li class="nav__item"><a href="/sell">Sell</a></li>
-        <li class="nav__item"><a href="/about">About</a></li>
+        <li class="nav__item"><a href="/buy.html">Buy</a></li>
+        <li class="nav__item"><a href="/sell.html">Sell</a></li>
+        <li class="nav__item"><a href="/about.html">About</a></li>
       </ul>
       <ul class="nav__register-login">
-        <li class="nav__register"><a href="/register">Register</a></li>
-        <li class="nav__login"><a href="/login">Login</a></li>
+        <li class="nav__register"><a href="/register.html">Register</a></li>
+        <li class="nav__login"><a href="/login.html">Login</a></li>
       </ul>
     </div>
   </nav>
@@ -39,9 +39,11 @@
     <div class="login__heading">
       <h1 class="login__title">Login</h1>
       <h2 class="login__subtitle">To access your account</h2>
+      <div id="login__error">
+      </div>
     </div>
     <div class="login__form-container">
-      <form action="login.php" class="login__form" method="post">
+      <form action="/about.html" class="login__form" id="login" method="get">
         <label for="username">Username</label>
         <input aria-required="true" class="login__form__input" id="username" name="username" required type="text">
         <label for="email">Email Address</label>

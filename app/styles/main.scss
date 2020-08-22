@@ -148,11 +148,28 @@ header {
     }
     &__heading {
       margin: 0 0 40px 15px;
+      position: relative;
+
+      #login__error {
+        &.visible {
+          background: #ffccc7;
+          border-radius: 5px;
+          display: inline;
+          padding: 5px 10px;
+          position: absolute;
+          top: 66px;
+          color: #5c0011;
+          transition: 100ms ease;
+          animation: bounce 2s 1;
+        }
+      }
+
       .login__title, .login__subtitle {
         font-weight: 900;
         margin: 5px 0;
         position: relative;
       }
+
       .login__title::after {
         content: '';
         position: absolute;
@@ -279,4 +296,19 @@ footer {
   background: $dark-gray;
   height: 80px;
   width: 100%;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes bounce {
+  0%, 22%, 54%, 86%, 100% {
+    transform: translateY(0);
+  }
+  44% {
+    transform: translateY(-6px);
+  }
+  66% {
+    transform: translateY(-5px);
+  }
 }
